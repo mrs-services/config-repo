@@ -1,0 +1,62 @@
+server.port: ${PORT:9999}
+server.context-path: /uaa
+spring.jpa.hibernate.ddl-auto: none
+server.session.timeout: 86400
+#spring.jpa.properties.hibernate.format_sql: true
+spring.datasource.sql-script-encoding: UTF-8
+spring.data.rest.base-path: /api
+security.oauth2.authorization.token-key-access: permitAll()
+security.oauth2.authorization.check-token-access: isAuthenticated()
+#logging.level.org.hibernate.SQL: DEBUG
+#logging.level.org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+logging.level.org.springframework.cloud.servicebroker.controller.BaseController: DEBUG
+spring.datasource.url: jdbc:mysql://localhost:3306/uaa
+spring.datasource.username: root
+spring.datasource.password:
+#logging.level.org.springframework.security: DEBUG
+
+# openssl genrsa -out private.pem 2048
+# openssl rsa -in private.pem -outform PEM -pubout -out public.pem
+jwt:
+  verifier-key: |
+    -----BEGIN PUBLIC KEY-----
+    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApSmVdhRnVGlYsT3kYkxU
+    R780Amka0qafzl2+qNRWVWcknhVxCZAJ4Y4tQd7D8RpBTbHTQw5jO/gYMKyfLtrM
+    fTv05XXT4I+f2TmspleWOSEQSNvQYfjPjto+/1GkDC0OJTn7xe0oSFuGySu9XJxW
+    emhNZH9beP1N7shw2uX2a6fO6jo/E0S/X0SxIsaZJxyzYoeEc6iovjv1+orC+HZ/
+    gqiT4q0SiRwO72VSu3OmwY95z8J0P4LtpzJfvTok0JreJFv4hauhuxU/qLeDDgga
+    CvYxNRyattFQX+ivXnUcLCt7cwaNvvJSjY6dGLmKhbw7nKwmdpRgKV/s4yhWHS+s
+    oQIDAQAB
+    -----END PUBLIC KEY-----
+  signing-key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEpAIBAAKCAQEApSmVdhRnVGlYsT3kYkxUR780Amka0qafzl2+qNRWVWcknhVx
+    CZAJ4Y4tQd7D8RpBTbHTQw5jO/gYMKyfLtrMfTv05XXT4I+f2TmspleWOSEQSNvQ
+    YfjPjto+/1GkDC0OJTn7xe0oSFuGySu9XJxWemhNZH9beP1N7shw2uX2a6fO6jo/
+    E0S/X0SxIsaZJxyzYoeEc6iovjv1+orC+HZ/gqiT4q0SiRwO72VSu3OmwY95z8J0
+    P4LtpzJfvTok0JreJFv4hauhuxU/qLeDDggaCvYxNRyattFQX+ivXnUcLCt7cwaN
+    vvJSjY6dGLmKhbw7nKwmdpRgKV/s4yhWHS+soQIDAQABAoIBAQCfB+tiR0M3hDhi
+    cbX28Ig2jWUG7S1mqAo4KwvqhIqcsTQRA5RUIN1i0gPB6T3CagV3SkKhzri+haTF
+    OXINK6C69YBZcZsSHzlLcL1Nbgi3+Z40iXOc4nb4li0SqwnKr5dvQOWtLy4afgbK
+    rdMn2WFrfAMJQZhSZ5Ui1t3T6JneDanGb26zUEi3o2mU5qIaKLKSadifZdh3/P/x
+    O87eqtdxr0s//00gRLg+8YRr2wNWYTZdpHh5WlsPVnxQ2lZskhtH7UdvseOTvykR
+    0UwIAPLGv7sjAZRJUBhaYDFK3rkgIXgE6lQ7Tdq/GeZKrSKDR54JeaZ9a8U/ag4T
+    mBnxyhoBAoGBANwfdeUXvVsFBJDHBKQQTi7RvwfUimftTFOctZZ/WyVQxmffMz1a
+    HXAfFhl8iH4qiGsF9bRW49cRgQGnOF1W2m4BKm5OKIDi+152i5X5GkhQfnj2BmtV
+    tD50QTBr5b0avcB0SQMDjybWTXVAKAV0FcaS1aRWgvYXID7v6Hg4izwHAoGBAMAU
+    65m2NeH70vHqOz5Ni71yB+w6IFz+zeoZC/TNxfj5xmdHMqO5kTbx5IABxuC69/J+
+    Ix5Ld0gBf/1XmkkBYFdd1hYK4dEdBeaUViAgj1VVAVGMuxarey5O3XPePllcWvBS
+    +34d6Q2LrpHjZPBcg4fsJLk0PtbxV8VTrcRopngXAoGBANFsAQ9PcbC56mkPX4Pz
+    m16B4PxDItbTdi2KR10Cl6W93rWOLcKuDJnSiYT/7SATuSwRRH0puaSxG4qGHGL5
+    MeE8rLC7HV/aE4sAv7aUg4PPSTQt5VeS92P/2NGHpdAvM955A8mhRj2N362wtyLR
+    GbKNmkK6p+gXgm8+cm6GZTlbAoGAeEZhRI3Y7Zlu/DYsRJXwE38swNmg3DpdG+H1
+    H6Qd/AoDFzZ42hZffKU47IKwUpYgngIn4Vdl6Huv9iX9oQswlWRXotPLlNJ0mG54
+    A4P/3HHu8m6J0+cqqdOOTXhzWCdBdkyv18fI38eAVy+pS+zSG7FdSW8SjirvR8te
+    +qaA3p8CgYApR921C3dl1b5mtvSg49/mQOrBfZGgGrWpXnJxGDo+goSimAPLipnq
+    nZzW6X3gjr7iTpw418dyedbieeolCIWBqV9JmrwJtopIxS4jmYG5HUs7jpF6bcro
+    HKWNkvcndduYb5M6+2ZBxCW3kRD/onWTESoAMyPCbNhm21w3WGGAdA==
+    -----END RSA PRIVATE KEY-----
+security:
+  user:
+    name: user
+    password: password
